@@ -1,103 +1,117 @@
 <!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Project 2</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-
-    <!-- Boostrap Stylesheet -->
-    <link rel="stylesheet" href="assets/css/bootstrap.min.css" media="screen">
-
-    <!-- Our own CSS stylesheet -->
-    <link rel="stylesheet" href="assets/css/styles.css" media="screen">
-    
-    <!-- Load jQuery -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-  
-    <!-- Load Chart.js -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.bundle.min.js"></script>
-
-    <!-- Load PapaParse to read csv files -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.1.0/papaparse.min.js"></script>
-
-</head>
-
+<html>
+<title>Final Project</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <body>
-    <!-- Start of navbar -->
-    <nav class="navbar navbar-default">
-        <div class="container-fluid navbar-custom">
 
-            <!-- Brand and toggle get grouped for better mobile display -->
-            <div class="row">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-                <span class="sr-only">Toggle Navigation</span>
-                <!-- <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span> -->
-                </button>
-                <div class="col-xs-12 phone-nav">
-                    <a class="navbar-brand" href="#" id="logo">World Happiness</a>
-                  </div>
-                </div>
-            </div>
+<!-- Navbar (sit on top) -->
+<div class="w3-top">
+  <div class="w3-bar w3-white w3-wide w3-padding w3-card">
+    <a href="#home" class="w3-bar-item w3-button">World of Wine</a>
+    <!-- Float links to the right. Hide them on small screens -->
+    <div class="w3-right w3-hide-small">
+        <a href="#about" class="w3-bar-item w3-button">About</a>
+      <a href="#red wine" class="w3-bar-item w3-button">Red Wine</a>
+      <a href="#white wine" class="w3-bar-item w3-button">White Wine</a>
+    </div>
+  </div>
+</div>
 
-            <!-- Collect the nav links, forms, and other content for toggling -->
-            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                <ul class="nav navbar-nav navbar-right navbar-right-custom">
-                <li><a href="http://127.0.0.1:50113/Homework_KP/Project-2/map/index.html">Map</a></li>
-                <li><a href="http://127.0.0.1:50113/Homework_KP/Project-2/index.html">Scores</a></li>
-                </ul>
-            </div><!-- /.navbar-collapse -->
-            </div>
-        </div><!-- /.container-fluid -->
-        </nav>
+<!-- Header -->
+<header class="w3-display-container w3-content w3-wide" style="max-width:1500px;" id="home">
+  <img class="w3-image" src="../assets/images/Wine .png" alt="Wine" width="1500" height="800">
+  <div class="w3-display-middle w3-margin-top w3-center"></div>
+</header>
 
-    <!-- body -->
-    <div class="container">
-        <div class="row">
-        <div class="col-md-12 jumbotron text-center">
-            <h1>World Happiness Dashboard
-            <img src="../assets/images/smiley-face.png" alt="" id="description-image"/>
-        </h1>
-            <p>Use the interactive charts below to explore the dataset</p>
-        </div>
-        </div>
-        <div class="row">
-        <div class="col-md-4">
-            <div class="well">
-            <h5>Country:</h5>
-            <select id="selDataset" name="name" onchange="optionChanged(this.value)">
-            </select>
-            </div>
-            <div class="panel panel-primary">
-            <div class="panel-heading">
-                <h3 class="panel-title">Demographic Info</h3>
-            </div>
-            <div id="sample-metadata" class="panel-body"></div>
-            </div>
-        </div>
-        <div class="col-md-8">
-            <div id="bar"></div>
-        </div>
-        <div class="col-md-5">
-            <div id="gauge"></div>
-        </div>
-        </div>
-        <div class="row">
-        <div class="col-md-12">
-            <div id="pie"></div>
-        </div>
-        </div>
-    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.9.1/d3.min.js"></script>
-    <script src="{{ url_for('static', filename='js/plot2.js')}}"></script>
-    <script src="https://d3js.org/d3.v6.min.js"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/d3-tip/0.7.1/d3-tip.min.js"></script>
-    <script src="static/plot2.js"></script>
+<!-- Page content -->
+<div class="w3-content w3-padding" style="max-width:1564px">
+
+    <!-- About Section -->
+  <div class="w3-container w3-padding-32" id="about">
+    <h3 class="w3-border-bottom w3-border-light-grey w3-padding-16">About</h3>
+    <p>The two datasets are related to red and white variants of the Portuguese "Vinho Verde" wine. Vinho Verde comes from a small region in Northern Portugal known for its super-value whites, reds, and rosés. These wines are loved for mouth-zapping acidity, subtle carbonation, and lower alcohol, making them a great choice for summer. For our project, we are going to explore how fixed acidity, volatile acidity, citric acid, residual sugar, chlorides, free sulfur dioxide, total sulfur dioxide, density, pH, sulphates, and alcohol vary among quality of wine score between 0 and 10.
+    </p>
+  </div>
+
+  <!-- Project Section -->
+  <div class="w3-container w3-padding-32" id="red wine">
+    <h3 class="w3-border-bottom w3-border-light-grey w3-padding-16">Red Wine</h3>
+  </div>
+
+  <div class="w3-row-padding">
+    <div class="w3-col l3 m6 w3-margin-bottom">
+      <div class="w3-display-container">
+        <div class="w3-display-topleft w3-black w3-padding">Quality Red Wines</div>
+        <img src="../assets/images/rw_quality.png" alt="House" style="width:100%">
+      </div>
+    </div>
+    <div class="w3-col l3 m6 w3-margin-bottom">
+      <div class="w3-display-container">
+        <div class="w3-display-topleft w3-black w3-padding">Correlation Matrix</div>
+        <img src="../assets/images/rw_corrmtx.png" alt="House" style="width:100%">
+      </div>
+    </div>
+    <div class="w3-col l3 m6 w3-margin-bottom">
+      <div class="w3-display-container">
+        <div class="w3-display-topleft w3-black w3-padding">Alcohol Content</div>
+        <img src="/../assets/images/rw_alcohol.png" alt="House" style="width:100%">
+      </div>
+    </div>
+    <div class="w3-col l3 m6 w3-margin-bottom">
+      <div class="w3-display-container">
+        <div class="w3-display-topleft w3-black w3-padding">Sulphates</div>
+        <img src="../assets/images/red_sulphates.png" alt="House" style="width:100%">
+      </div>
+    </div>
+  </div>
+
+
+<!-- Project Section -->
+<div class="w3-container w3-padding-32" id="white wine">
+    <h3 class="w3-border-bottom w3-border-light-grey w3-padding-16">White Wine</h3>
+  </div>
+
+  <div class="w3-row-padding">
+    <div class="w3-col l3 m6 w3-margin-bottom">
+      <div class="w3-display-container">
+        <div class="w3-display-topleft w3-black w3-padding">Quality White Wines</div>
+        <img src="../assets/images/ww_quality.png" alt="House" style="width:100%">
+      </div>
+    </div>
+    <div class="w3-col l3 m6 w3-margin-bottom">
+      <div class="w3-display-container">
+        <div class="w3-display-topleft w3-black w3-padding">Correlation Matrix</div>
+        <img src="../assets/images/ww_corrmtx.png" alt="House" style="width:100%">
+      </div>
+    </div>
+    <div class="w3-col l3 m6 w3-margin-bottom">
+      <div class="w3-display-container">
+        <div class="w3-display-topleft w3-black w3-padding">Alcohol Content </div>
+        <img src="/../assets/images/ww_alcohol.png" alt="House" style="width:100%">
+      </div>
+    </div>
+    <div class="w3-col l3 m6 w3-margin-bottom">
+      <div class="w3-display-container">
+        <div class="w3-display-topleft w3-black w3-padding">pH</div>
+        <img src="../assets/images/ww_pH.png" alt="House" style="width:100%">
+      </div>
+    </div>
+  </div>
+  
+  
+<!-- End page content -->
+</div>
+
+
+<!-- Footer -->
+<footer class="w3-center w3-black w3-padding-16">
+    <p>Database Citation: P. Cortez, A. Cerdeira, F. Almeida, T. Matos and J. Reis. 
+        Modeling wine preferences by data mining from physicochemical properties. In Decision Support Systems, Elsevier, 47(4):547-553, 2009.</p>
+  <p>Powered by <a href="https://www.w3schools.com/w3css/default.asp" title="W3.CSS" target="_blank" class="w3-hover-text-green">w3.css</a></p>
+</footer>
+
 </body>
-
 </html>
+

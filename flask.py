@@ -17,7 +17,7 @@ engine = create_engine(f'postgres://pyuepqwjtgkmfx:75425df2df071f0b81f4e7bca3ad4
 #################################################
 app = Flask(__name__)
 
-@app.route("/", methods=["GET"])
+@app.route('/')
 def home():
     return render_template('index.html')
 
